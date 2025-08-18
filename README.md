@@ -44,6 +44,7 @@ Your balance is: ksh 1500.00
 You are within the budget
 
 AFFORDABLE BILLS
+[rent,groceries]
 
 Report saved successfully.
-Process finished.
+
