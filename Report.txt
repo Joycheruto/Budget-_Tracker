@@ -1,0 +1,11 @@
+
+----BUDGET DATA FOR peter----
+
+DESCRIPTION
+rent : ksh 5000.00
+food : ksh 4000.00
+travelling : ksh 30.00
+Total expenses:  3
+Your total is:  ksh 9030.00
+Your balance is:  ksh 970.00
+You are within the budget
