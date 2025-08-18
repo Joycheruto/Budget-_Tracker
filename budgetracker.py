@@ -3,73 +3,73 @@
 name = input("please enter your name:  ") 
 print(f"Hello, {name}  😊")
 
+
+# Ask user for their budget
 while True:
     try:
-        budget =float(input("Please enter your budget:  "))
+        budget =float(input("Please enter your budget:  "))  # should be a number
         break
     except ValueError:
-        print(" INVALID INPUT   ")
+        print(" INVALID INPUT   ")   #show this error if not number entered
         print()
-print("type done when you have completed..,")
+print("type done when you have completed...")
 print()
 
-item_prices = {}
 
+
+#dictionary stores the expense items and their amount
+item_amount = {}
+
+#loops infinitely unless user types "done"
 while True:
     item = input("Please enter your expense:  ")
-    if item.lower() =="done":
+    if item.lower() =="done":     #stop if user types done
         break
-    if not item:
+    if not item:                   #prevents an empty expense name
         print("Expense name cannot be empty!")
         continue
+
+    # amount for the expense
     while True:
         try:
-            price = float(input("enter the amount: "))
+            amount = float(input("enter the amount: "))  # cost of the expense
             break
         except ValueError:
-            print("INVALID INPUT  ")
-    item_prices[item] = price
+            print("INVALID INPUT  ")  #outputs this error message if user inputs anything else other  than a float
 
 
+    item_amount[item] = amount   #saves the expense name  and the amount into a dictionary
 
 
+#This function processes the budget ,calculate the total,balance,affordable expenses and creates a report
 
 
-
-
-
-
-
-
-
-def budget_tracker(item_prices,budget):
+def budget_tracker(item_amount,budget):
    
-    affordable=[]
+    affordable=[]  #the list stores affordable expenses 
 
     print( )
 
-    # if not item_prices:
-    #     print("You have not entered expenses...")
-    #     return []
-    
+
 
     print("DESCRIPTION")
-    for item,price in item_prices.items():
+    for item,amount in item_amount.items():
 
-        print(f"{item} : ksh{price: .2f}")
+        print(f"{item} : ksh{price: .2f}")  #print the expense details
 
-        if price<=budget:
+        if amount<=budget:             #if amount of the expense is <= budget,it is affordable
             affordable.append(item)
             affordable.sort()###
 
 
 
 
-    
-    total_of_expenses = len(item_prices.keys())
-    total_amount = sum(item_prices.values())
-     
-    balance = budget - sum(item_prices.values())
+   #calculates the total no of expenses,total spent and the balance
+    total_of_expenses = len(item_amount.keys())
+    total_amount = sum(item_amount.values())
+    balance = budget - sum(item_amount.values())
+
+
     print("  ")#adds an empty line
     print("Total expenses: ",total_of_expenses)
     print(f"your total is:  ksh {total_amount :.2f}")   
@@ -78,7 +78,7 @@ def budget_tracker(item_prices,budget):
 
 
 
-
+    #checks if the user is within budget or is overspending
     if balance < 0:
         print("⚠️  you are above your budget !")
     else:
@@ -87,12 +87,14 @@ def budget_tracker(item_prices,budget):
 
        
     print( )
+
+    #saves the report to a text file
     try:
-        with open("Report.txt","w") as file:
+        with open("Report.txt","w") as file:     # i cna change the mode to append so as to have an history of users budget
             file.write(f"\n----BUDGET DATA FOR {name}----\n")
             file.write("\nDESCRIPTION")
-            for item,price in item_prices.items():
-                file.write(f"\n{item} : ksh {price:.2f}")
+            for item,price in item_amount.items():
+                file.write(f"\n{item} : ksh {amount:.2f}")
 
             file.write(f"\nTotal expenses:  {total_of_expenses}\n")
             file.write(f"Your total is:  ksh {total_amount:.2f}\n")
@@ -106,39 +108,13 @@ def budget_tracker(item_prices,budget):
 
     except OSError as e:
         print("could not save the report!!")
-    finally:
-        print("Process finished .")
+ 
 
  
-    print ("AFFORDABLE BILLS")
-    # print (affordable)
-
-                                                           
+    print ("AFFORDABLE BILLS")                                                       
     return affordable
   
-print(budget_tracker(item_prices,budget))
-# affordable = budget_tracker(item_prices,budget)
-# affordable, item_prices = pay_bills(item_prices,affordable)
-
-
-
-
-
-
-# def pay_bills(item_prices,affordable):
-
-#     while True:
-#         paid_bill = input("Enter the paid bill  ")
-
-#         # if paid_bill == "done":
-#         #     break
-#         if paid_bill in affordable:
-#             affordable.remove(paid_bill)
-#             item_prices.pop(paid_bill,None)
-#         else:
-#             print("item not found in the affordable list")
-
-#         return affordable,item_prices
+print(budget_tracker(item_amount,budget))   #calls the function
 
 
 

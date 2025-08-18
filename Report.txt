@@ -9,3 +9,4 @@ Total expenses:  3
 Your total is:  ksh 9030.00
 Your balance is:  ksh 970.00
 You are within the budget
+
