@@ -25,13 +25,13 @@ Hello, JOY 😊
 Please enter your budget: 5000
 Type 'done' when you have completed entering expenses...
 
-Please enter your expense: Rent
+Expense 1: Rent
 Enter the amount: 2000
 
-Please enter your expense: Groceries
+Expense 2: Groceries
 Enter the amount: 1500
 
-Please enter your expense: done
+Expense 3: done
 
 DESCRIPTION
 Rent : ksh 2000.00
