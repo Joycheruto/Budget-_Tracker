@@ -1,12 +1,11 @@
 
-----BUDGET DATA FOR peter----
+----BUDGET DATA FOR joy----
 
 DESCRIPTION
-rent : ksh 5000.00
-food : ksh 4000.00
-travelling : ksh 30.00
+groceries : ksh 200.00
+rent  : ksh 200.00
+travelling : ksh 300.00
 Total expenses:  3
-Your total is:  ksh 9030.00
-Your balance is:  ksh 970.00
+Your total is:  ksh 700.00
+Your balance is:  ksh 300.00
 You are within the budget
-

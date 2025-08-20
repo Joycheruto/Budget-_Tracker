@@ -46,7 +46,7 @@ while True:
     item_amount[item] = amount   #saves the expense name  and the amount into a dictionary
 
 
-#This function processes the budget ,calculate the total,balance,affordable expenses and creates a report
+#This function processes the budget ,calculate the total expenses,amount,balance,affordable expenses 
 
 
 def budget_tracker(item_amount,budget):
@@ -54,8 +54,6 @@ def budget_tracker(item_amount,budget):
     affordable=[]  #the list stores affordable expenses 
 
     print( )
-
-
 
     print("DESCRIPTION")
     for item,amount in item_amount.items():
@@ -66,39 +64,51 @@ def budget_tracker(item_amount,budget):
             affordable.append(item)
             affordable.sort()###
 
-
-
-
    #calculates the total no of expenses,total spent and the balance
     total_of_expenses = len(item_amount.keys())
     total_amount = sum(item_amount.values())
     balance = budget - sum(item_amount.values())
 
 
+  
+     
+    return (total_of_expenses,total_amount,balance,affordable)
+
+
+
+
+def display_report(total_of_expenses,total_amount,balance): #the function displays what is in the budgettracker function 
+    
     print("  ")#adds an empty line
+    print("===Report====")
+   
     print("Total expenses: ",total_of_expenses)
     print(f"your total is:  ksh {total_amount :.2f}")   
     print(f"your balance is:  ksh {balance:.2f}")
+    print ("AFFORDABLE BILLS :  ",affordable)
     print( )
-
 
 
     #checks if the user is within budget or is overspending
     if balance < 0:
         print("⚠️  you are above your budget !")
     else:
-        print("you are within the budget")
+        print("✅ you are within the budget")
+   
+    print( )
 
 
        
-    print( )
 
-    #saves the report to a text file
+
+def saving_the_report(name,item_amount,total_of_expenses,total_amount,balance):    #saves the report to a text file
+
+
     try:
-        with open("Report.txt","w") as file:     # i cna change the mode to append so as to have an history of users budget
+        with open("Report.txt","w") as file:     # i cna change the mode  append so as to have an history of users budget
             file.write(f"\n----BUDGET DATA FOR {name}----\n")
             file.write("\nDESCRIPTION")
-            for item,price in item_amount.items():
+            for item,amount in item_amount.items():
                 file.write(f"\n{item} : ksh {amount:.2f}")
 
             file.write(f"\nTotal expenses:  {total_of_expenses}\n")
@@ -115,11 +125,10 @@ def budget_tracker(item_amount,budget):
         print("could not save the report!!")
  
 
- 
-    print ("AFFORDABLE BILLS")                                                       
-    return affordable
-  
-print(budget_tracker(item_amount,budget))   #calls the function
+
+total_of_expenses, total_amount, balance, affordable = budget_tracker(item_amount, budget)
+display_report(total_of_expenses,total_amount,balance)
+saving_the_report(name,item_amount,total_of_expenses,total_amount,balance)
 
 
 
