@@ -19,14 +19,19 @@ print()
 
 #dictionary stores the expense items and their amount
 item_amount = {}
+entries = 0
 
 #loops infinitely unless user types "done"
+
 while True:
-    item = input("Please enter your expense:  ")
+    entries+= 1
+    item = input(f"Expense {entries} :  ")
+    
     if item.lower() =="done":     #stop if user types done
         break
     if not item:                   #prevents an empty expense name
         print("Expense name cannot be empty!")
+        entries -= 1 #do not count the empty space
         continue
 
     # amount for the expense
@@ -55,7 +60,7 @@ def budget_tracker(item_amount,budget):
     print("DESCRIPTION")
     for item,amount in item_amount.items():
 
-        print(f"{item} : ksh{price: .2f}")  #print the expense details
+        print(f"{item} : ksh{amount: .2f}")  #print the expense details
 
         if amount<=budget:             #if amount of the expense is <= budget,it is affordable
             affordable.append(item)
