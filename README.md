@@ -25,7 +25,10 @@ Please enter your name: JOY
 Hello, JOY 😊
 
 Please enter your budget: 5000
+
+
 Type 'done' when you have completed entering expenses...
+
 
 Expense 1: Rent
 Enter the amount: 2000
@@ -36,11 +39,15 @@ Enter the amount: 1500
 Expense 3: done
 
 DESCRIPTION
+
 Rent : ksh 2000.00
+
 Groceries : ksh 1500.00
 
 Total expenses: 2
+
 Your total is: ksh 3500.00
+
 Your balance is: ksh 1500.00
 
 You are within the budget
