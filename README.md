@@ -20,6 +20,8 @@ Run the program in your terminal or command prompt
 ## Example usage
 
 Please enter your name: JOY
+
+
 Hello, JOY 😊
 
 Please enter your budget: 5000
@@ -44,6 +46,7 @@ Your balance is: ksh 1500.00
 You are within the budget
 
 AFFORDABLE BILLS
+
 [rent,groceries]
 
 Report saved successfully.
