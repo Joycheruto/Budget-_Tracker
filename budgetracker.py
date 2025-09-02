@@ -4,6 +4,7 @@ name = input("please enter your name:  ")
 print(f"Hello, {name}  😊")
 
 
+print()
 # Ask user for their budget
 while True:
     try:
@@ -14,6 +15,7 @@ while True:
         print()
 print("type done when you have completed...")
 print()
+
 
 
 
@@ -46,32 +48,28 @@ while True:
     item_amount[item] = amount   #saves the expense name  and the amount into a dictionary
 
 
+
 #This function processes the budget ,calculate the total expenses,amount,balance,affordable expenses 
-
-
 def budget_tracker(item_amount,budget):
    
     affordable=[]  #the list stores affordable expenses 
 
     print( )
 
-    print("DESCRIPTION")
+    
     for item,amount in item_amount.items():
 
-        print(f"{item} : ksh{amount: .2f}")  #print the expense details
+
 
         if amount<=budget:             #if amount of the expense is <= budget,it is affordable
             affordable.append(item)
-            affordable.sort()###
+    affordable.sort()
 
    #calculates the total no of expenses,total spent and the balance
     total_of_expenses = len(item_amount.keys())
     total_amount = sum(item_amount.values())
     balance = budget - sum(item_amount.values())
-
-
-  
-     
+ 
     return (total_of_expenses,total_amount,balance,affordable)
 
 
@@ -79,8 +77,14 @@ def budget_tracker(item_amount,budget):
 
 def display_report(total_of_expenses,total_amount,balance): #the function displays what is in the budgettracker function 
     
+
+    print("DESCRIPTION")
+    for item,amount in item_amount.items():
+
+        print(f"{item} : ksh {amount: .2f}") #prints the expense details
+        
     print("  ")#adds an empty line
-    print("===Report====")
+   
    
     print("Total expenses: ",total_of_expenses)
     print(f"your total is:  ksh {total_amount :.2f}")   
@@ -105,7 +109,7 @@ def saving_the_report(name,item_amount,total_of_expenses,total_amount,balance): 
 
 
     try:
-        with open("Report.txt","w") as file:     # i cna change the mode  append so as to have an history of users budget
+        with open("Report.txt","a") as file:     # i cna change the mode  append so as to have an history of users budget
             file.write(f"\n----BUDGET DATA FOR {name}----\n")
             file.write("\nDESCRIPTION")
             for item,amount in item_amount.items():

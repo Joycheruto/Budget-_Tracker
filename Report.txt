@@ -1,11 +1,34 @@
 
+----BUDGET DATA FOR cherut0----
+
+DESCRIPTION
+rent : ksh 60000.00
+food : ksh 4000.00
+travel : ksh 5000.00
+Total expenses:  3
+Your total is:  ksh 69000.00
+Your balance is:  ksh 931000.00
+You are within the budget
+
 ----BUDGET DATA FOR joy----
 
 DESCRIPTION
-groceries : ksh 200.00
-rent  : ksh 200.00
-travelling : ksh 300.00
+rent : ksh 500.00
+food : ksh 89.00
+water : ksh 56.00
 Total expenses:  3
-Your total is:  ksh 700.00
-Your balance is:  ksh 300.00
+Your total is:  ksh 645.00
+Your balance is:  ksh 355.00
 You are within the budget
+
+----BUDGET DATA FOR elizabeth----
+
+DESCRIPTION
+groceries : ksh 5000.00
+rent : ksh 6000.00
+travelling : ksh 1000.00
+water : ksh 500.00
+Total expenses:  4
+Your total is:  ksh 12500.00
+Your balance is:  ksh -2500.00
+ you are above budget!
