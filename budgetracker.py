@@ -87,17 +87,17 @@ def display_report(total_of_expenses,total_amount,balance): #the function displa
    
    
     print("Total expenses: ",total_of_expenses)
-    print(f"your total is:  ksh {total_amount :.2f}")   
-    print(f"your balance is:  ksh {balance:.2f}")
+    print(f"Your total is:  ksh {total_amount :.2f}")   
+    print(f"Your balance is:  ksh {balance:.2f}")
     print ("AFFORDABLE BILLS :  ",affordable)
     print( )
 
 
     #checks if the user is within budget or is overspending
     if balance < 0:
-        print("⚠️  you are above your budget !")
+        print("⚠️  You are above your budget !")
     else:
-        print("✅ you are within the budget")
+        print("✅ You are within the budget.")
    
     print( )
 
@@ -109,7 +109,7 @@ def saving_the_report(name,item_amount,total_of_expenses,total_amount,balance): 
 
 
     try:
-        with open("Report.txt","a") as file:     # i cna change the mode  append so as to have an history of users budget
+        with open("Report.txt","a") as file:     # Used  the mode  append so as to have an history of the  budget tracker.
             file.write(f"\n----BUDGET DATA FOR {name}----\n")
             file.write("\nDESCRIPTION")
             for item,amount in item_amount.items():
@@ -123,7 +123,7 @@ def saving_the_report(name,item_amount,total_of_expenses,total_amount,balance): 
             else:
                 file.write("You are within the budget\n")
 
-        print("Report saved successfully.")
+        print("Your Report  has been saved successfully.")
 
     except OSError as e:
         print("could not save the report!!")
